@@ -1,5 +1,13 @@
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 440px;
+}
+
 .grid {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     border: 2px black solid;
 }
