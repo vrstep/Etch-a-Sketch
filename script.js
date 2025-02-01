@@ -13,4 +13,16 @@ function createGrid() {
     }
 }
 
+function hoverGrid() {
+    for (let grid of gridContainer.querySelectorAll("div")) {
+        grid.addEventListener("mouseover", (e) => {
+            e.target.classList.add("hover-color");
+        });
+    }
+}
+
 createGrid();
+
+gridContainer.addEventListener("mouseover", () => {
+    hoverGrid();
+});

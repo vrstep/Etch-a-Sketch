@@ -25,3 +25,7 @@
     height: 24px;
     border: 2px black solid;
 }
+
+.hover-color {
+    background-color: aqua;
+}
