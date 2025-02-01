@@ -8,11 +8,19 @@ let gridContainerSize = getGridContainerSize(gridSize);
 
 buttonPromptGridSize.addEventListener("click", () => {
     gridContainer.querySelectorAll("div").forEach(grid => {
-    console.log("removed");
     grid.remove();
 });
     createGrid()
 });
+
+const gameStart = () => {
+    for (let i = 0; i < (gridSize * gridSize); i++) {
+        const grid = document.createElement("div");
+        grid.className = "grid";
+        gridContainer.style.width = `${gridContainerSize}px`;
+        gridContainer.append(grid);
+    }
+}
 
 function createGrid() {
     gridSize = promptGridSize();
@@ -46,3 +54,5 @@ function hoverGrid() {
 gridContainer.addEventListener("mouseover", () => {
     hoverGrid();
 });
+
+gameStart();
