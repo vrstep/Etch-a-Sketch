@@ -3,14 +3,20 @@ const buttonPromptGridSize = document.querySelector("#btn-prompt-grid-size");
 
 buttonPromptGridSize.textContent = "Change grid size";
 
-const gridSize = promptGridSize();
-const gridContainerSize = getGridContainerSize(gridSize);
+let gridSize = 16;
+let gridContainerSize = getGridContainerSize(gridSize);
 
 buttonPromptGridSize.addEventListener("click", () => {
-    promptGridSize();
+    gridContainer.querySelectorAll("div").forEach(grid => {
+    console.log("removed");
+    grid.remove();
+});
+    createGrid()
 });
 
 function createGrid() {
+    gridSize = promptGridSize();
+    gridContainerSize = getGridContainerSize(gridSize);
     for (let i = 0; i < (gridSize * gridSize); i++) {
         const grid = document.createElement("div");
         grid.className = "grid";
@@ -36,8 +42,6 @@ function hoverGrid() {
         });
     }
 }
-
-createGrid();
 
 gridContainer.addEventListener("mouseover", () => {
     hoverGrid();
