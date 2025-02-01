@@ -1,21 +1,21 @@
 const gridContainer = document.querySelector("#grid-container");
-const buttonInputGridSize = document.querySelector("#btn-prompt-grid-size");
-
-// To find width formula grid 18x18, multiply grid widthxheight * grid size; e.g 18x24= 432px
+const buttonPromptGridSize = document.querySelector("#btn-prompt-grid-size");
 
 const gridSize = promptGridSize();
+const gridContainerSize = getGridContainerSize(gridSize);
 
 function createGrid() {
-    for (let i = 0; i < gridSize; i++) {
+    for (let i = 0; i < (gridSize * gridSize); i++) {
         const grid = document.createElement("div");
         grid.className = "grid";
+        gridContainer.style.width = `${gridContainerSize}px`;
         gridContainer.append(grid);
-        // for (let j = 0; j < 15; j++) {
-        //     const grid = document.createElement("div");
-        //     grid.className = "grid";
-        //     gridContainer.append(grid);
-        // }
     }
+}
+
+function getGridContainerSize(gridSize) {
+    let gridContainerSize = gridSize * 24;
+    return gridContainerSize.toString();
 }
 
 function promptGridSize() {
