@@ -40,7 +40,9 @@ function getGridContainerSize(gridSize) {
 
 function promptGridSize() {
     const gridSize = prompt("What size of grid you want?", "");
-    return gridSize;
+    if (gridSize > 100) {
+        alert("Calm down, bro! Only less than 100 grids");
+    } else return gridSize;
 }
 
 function hoverGrid() {
