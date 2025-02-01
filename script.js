@@ -1,8 +1,14 @@
 const gridContainer = document.querySelector("#grid-container");
 const buttonPromptGridSize = document.querySelector("#btn-prompt-grid-size");
 
+buttonPromptGridSize.textContent = "Change grid size";
+
 const gridSize = promptGridSize();
 const gridContainerSize = getGridContainerSize(gridSize);
+
+buttonPromptGridSize.addEventListener("click", () => {
+    promptGridSize();
+});
 
 function createGrid() {
     for (let i = 0; i < (gridSize * gridSize); i++) {
