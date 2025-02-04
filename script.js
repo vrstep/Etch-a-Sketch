@@ -16,9 +16,15 @@ buttonPromptGridSize.addEventListener("click", () => {
 });
 
 buttonRandomColor.addEventListener("click", () => {
-    gridContainer.addEventListener("mouseover", () => {
-        randomizePaintGrid();
-    });
+    buttonRandomColor.classList.toggle("rainbow-mode");
+
+    if (buttonRandomColor.className == "rainbow-mode") {
+        gridContainer.removeEventListener("mouseover", paintGrid);
+        gridContainer.addEventListener("mouseover", randomizePaintGrid);
+    } else {
+        gridContainer.removeEventListener("mouseover", randomizePaintGrid);
+        gridContainer.addEventListener("mouseover", paintGrid);
+    }
 });
 
 const gameStart = () => {
@@ -75,5 +81,4 @@ gridContainer.addEventListener("mouseover", () => {
     paintGrid();
 });
 
-randomizePaintGrid();
 gameStart();
