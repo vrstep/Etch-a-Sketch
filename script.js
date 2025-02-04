@@ -1,7 +1,9 @@
 const gridContainer = document.querySelector("#grid-container");
 const buttonPromptGridSize = document.querySelector("#btn-prompt-grid-size");
+const buttonRandomColor = document.querySelector("#btn-random-color");
 
 buttonPromptGridSize.textContent = "Change grid size";
+buttonRandomColor.textContent = "Random";
 
 let gridSize = 16;
 let gridContainerSize = getGridContainerSize(gridSize);
@@ -11,6 +13,12 @@ buttonPromptGridSize.addEventListener("click", () => {
     grid.remove();
 });
     createGrid()
+});
+
+buttonRandomColor.addEventListener("click", () => {
+    gridContainer.addEventListener("mouseover", () => {
+        randomizePaintGrid();
+    });
 });
 
 const gameStart = () => {
@@ -64,8 +72,7 @@ function randomizePaintGrid() {
 }
 
 gridContainer.addEventListener("mouseover", () => {
-    // paintGrid();
-    randomizePaintGrid();
+    paintGrid();
 });
 
 randomizePaintGrid();
