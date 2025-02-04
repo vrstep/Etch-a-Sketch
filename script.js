@@ -44,16 +44,16 @@ function promptGridSize() {
     } else return gridSize;
 }
 
-function hoverGrid() {
+function paintGrid() {
     for (let grid of gridContainer.querySelectorAll("div")) {
         grid.addEventListener("mouseover", (e) => {
-            e.target.classList.add("hover-color");
+            e.target.classList.add("painted");
         });
     }
 }
 
 gridContainer.addEventListener("mouseover", () => {
-    hoverGrid();
+    paintGrid();
 });
 
 gameStart();
