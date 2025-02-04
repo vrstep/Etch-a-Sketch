@@ -52,8 +52,21 @@ function paintGrid() {
     }
 }
 
+function randomizePaintGrid() {
+    let red = Math.floor(Math.random() * 255);
+    let green = Math.floor(Math.random() * 255);
+    let blue = Math.floor(Math.random() * 255);
+    for (let grid of gridContainer.querySelectorAll("div")) {
+        grid.addEventListener("mouseover", (e) => {
+            e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        });
+    }
+}
+
 gridContainer.addEventListener("mouseover", () => {
-    paintGrid();
+    // paintGrid();
+    randomizePaintGrid();
 });
 
+randomizePaintGrid();
 gameStart();
