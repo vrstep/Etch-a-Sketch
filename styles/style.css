@@ -14,14 +14,14 @@
 
 #grid-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
     flex-wrap: wrap;
 }
 
 .grid {
-    width: 24px;
-    height: 24px;
+    flex: 1 1 auto;
     border: 2px black solid;
 }
 
