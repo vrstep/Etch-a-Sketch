@@ -17,7 +17,6 @@ const gameStart = () => {
     for (let i = 0; i < (gridSize * gridSize); i++) {
         const grid = document.createElement("div");
         grid.className = "grid";
-        // gridContainer.style.width = `${gridContainerSize}px`;
         grid.style.width = `calc(100% / ${gridSize})`;
         gridContainer.append(grid);
     }
@@ -25,11 +24,9 @@ const gameStart = () => {
 
 function createGrid() {
     gridSize = promptGridSize();
-    // gridContainerSize = getGridContainerSize(gridSize);
     for (let i = 0; i < (gridSize * gridSize); i++) {
         const grid = document.createElement("div");
         grid.className = "grid";
-        // gridContainer.style.width = `${gridContainerSize}px`;
         grid.style.width = `calc(100% / ${gridSize})`;
         gridContainer.append(grid);
     }
